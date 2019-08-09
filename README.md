@@ -1,27 +1,38 @@
 # BusquedatabApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.3.
+Aplicación que permita realizar una búsqueda sobre los tableros privados disponibles en una cuanta de trello
 
-## Development server
+Este proyecto fue generado con  [Angular CLI](https://github.com/angular/angular-cli) version 8.0.3.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Acceder a la aplicación en servidor publico  firebase Hosting
 
-## Code scaffolding
+para acceder a la aplicación en un servidor publico copie la siguiente ruta en un navegador
+```
+https://busquedatab-app.firebaseapp.com/
+```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Clonar el repositorio
+
+Clone este repositorio usando el comando git:
+```
+git clone https://github.com/jggonzalezh/busquedaTabapp.git
+```
+## Instalar dependencias
+
+Una vez clonado el repositorio  ejecute el siguiente comando para instalar dependencias
+```
+npm install
+```
+
+
+## Servidor de desarrollo
+
+Ejecute el comando `ng serve` para ambiente de desarrollo. y copie en el navegador la ruta `http://localhost:4200/`.
+
+
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Ejecute el comando `ng build --prod` paraconstruir el proyecto. lo artefactos seran almacenados en el directorio `dist/` . 
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
