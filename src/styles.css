@@ -1,1 +1,69 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+
+.text-white {
+    color: #fff!important;
+}
+
+.text-warning {
+    color: #ffc107!important;
+}
+
+.inputsearch{
+  width: 100%;
+  height: 50%;
+}
+
+.blackbtn {
+    margin-right: -245px;
+    color: DodgerBlue;
+    background-color: #343a40;
+    border-color: #343a40;
+    width: 250px;
+    height: 70px;
+}
+
+.blackbtnboard {
+  color: DodgerBlue;
+  background-color: #343a40;
+  border-color: #343a40;
+
+}
+
+.container-center-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 200px;
+  align-items: center;
+  background-color: DodgerBlue;
+  padding-left: 100px;
+}
+
+.container-center {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 200px;
+    align-items: center;
+    background-color: DodgerBlue;
+    padding-left: 100px;
+  }
+
+  .container-center > div {
+    background-color: DodgerBlue;
+    width: 500px;
+    text-align: center;
+    line-height: 75px;
+    font-size: 30px;
+  }
+
+  .example-icon {
+    padding: 0 14px;
+  }
+  
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+  

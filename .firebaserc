@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "busquedatab-app": {
+      "hosting": {
+        "busquedatab-app": [
+          "busquedatab-app"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "busquedatab-app"
+  }
+}

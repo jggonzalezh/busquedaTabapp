@@ -1,0 +1,24 @@
+<div  *ngIf="!loggedIn" class="container-center-col"  style="text-align:center">
+  <h6 class="text-white ">Para continuar  seleciona una opcion</h6>
+  <br>
+<button mat-raised-button  (click)="loginFb()"        color="primary">Login con Facebook</button>
+<br>
+<button mat-raised-button  (click)="login()"  color="warn">Login con Google</button>
+<br>
+<button mat-button (click)="loginDummy()" >Entrar sin Login</button>
+</div>
+
+<div  *ngIf="loggedIn" class="container-center"  style="text-align:center"  >
+    <div>
+      <img  alt="Trello Logo" src="../assets/img/trello-logo-1.png"   width="400" height="100"  >
+    </div>
+    <div>
+     <h1 class="text-white mat-display-4">TREFIND</h1>
+     <form (ngSubmit)="onSubmit()"  >
+      <input type="text" name="userName" class="inputsearch" [(ngModel)]="model">
+       <br>
+      <input class="blackbtn" type="submit" value="ENTRAR">
+    </form> 
+    
+   </div>
+</div>

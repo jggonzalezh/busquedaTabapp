@@ -1,0 +1,104 @@
+
+<mat-toolbar color="accent">
+  
+    <mat-toolbar-row>
+      <span>Hola  <span  class="text-warning">{{user | uppercase}} </span>Bienvenid@ a  <span  >TREFIND</span></span>
+      <span class="example-spacer"></span>
+
+    <mat-form-field  [floatLabel]="'never'"   class="search-width"  appearance="fill" >
+        <mat-icon matSuffix  >search</mat-icon>
+      <input type="text" placeholder="Ingrese un nombre" matInput [formControl]="myControl" [matAutocomplete]="auto"  >
+
+      <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+          <mat-option *ngFor="let board of  filteredOptions  |async"  [value]="board">
+              {{board.name }}
+            </mat-option>
+      </mat-autocomplete>
+      
+    </mat-form-field>
+
+    </mat-toolbar-row>
+</mat-toolbar>
+{{   myControl.value?.name  }}
+
+<div  class="container-board-center">
+
+<div class="example-container">
+    
+  <div
+    cdkDropList
+    #boardList="cdkDropList"
+    [cdkDropListData]="filteredboards"
+    [cdkDropListConnectedTo]="[favoriteList]"
+    class="example-list-c"
+    id="inicial"
+    (cdkDropListDropped)="dropLeft($event)">
+    <div *ngFor="let board of filteredboards"   class="example-box" cdkDrag>
+      <mat-card class="board-card-color"   matTooltip="Arrastra para agregar a favoritos" >
+          <mat-card-header>
+            <div mat-card-avatar>
+              <button color="primary" mat-mini-fab>
+                <mat-icon matBadge="15" matBadgePosition="above after" matBadgeColor="warn">assessment</mat-icon>
+              </button>
+            </div>
+            <mat-card-title class="text-white">{{ board.name }}</mat-card-title>
+          </mat-card-header>
+          <mat-progress-bar [color]="'white'" mode="determinate" value="0">
+            <mat-icon matBadge="15" matBadgePosition="above after" matBadgeColor="white">home</mat-icon>
+          </mat-progress-bar>
+          <mat-card-content>
+            <p>  {{ board.desc }}</p>
+          </mat-card-content>
+         
+            <button class="blackbtnboard"  (click)="gotoBoard(board.url)"     color="primary" mat-button>VISITAR TABLERO</button>
+      
+  
+      </mat-card>
+    </div>
+  </div>
+
+</div>
+
+ <div class="example-container-f">
+    <div
+      cdkDropList
+      #favoriteList="cdkDropList"
+      [cdkDropListData]="favoriteBoards"
+      [cdkDropListConnectedTo]="[boardList]"
+      class="example-list"
+      id="final"
+      (cdkDropListDropped)="dropRight($event)">
+      <mat-toolbar color="primary">
+  
+          <mat-toolbar-row>
+            <span>Tus Tableros favoritos</span>
+            <span class="example-spacer"></span>
+      
+      
+          </mat-toolbar-row>
+      </mat-toolbar>
+      <div *ngFor="let board of favoriteBoards"   class="example-box" cdkDrag>
+        <mat-card class="favboard-card-color" matTooltip="Arrastra para eliminar de favoritos" >
+            <mat-card-header>
+              <div mat-card-avatar>
+                <button color="primary" mat-mini-fab>
+                  <mat-icon matBadge="15" matBadgePosition="above after" matBadgeColor="warn">assessment</mat-icon>
+                </button>
+              </div>
+              <mat-card-title class="text-white">{{ board.name }}</mat-card-title>
+            </mat-card-header>
+            <mat-progress-bar [color]="'white'" mode="determinate" value="0">
+              <mat-icon matBadge="15" matBadgePosition="above after" matBadgeColor="white">home</mat-icon>
+            </mat-progress-bar>
+            <mat-card-content>
+              <p>  {{ board.desc }}</p>
+            </mat-card-content>
+              <button class="blackbtnboard"    (click)="gotoBoard(board.url)"     color="primary" mat-button>VISITAR TABLERO</button>
+        </mat-card>
+      </div>
+    </div>
+</div>
+
+ 
+</div>
+
